@@ -22,5 +22,6 @@ export const robots=[
     {
         id:5,
         first_name:"Riya",
+        last_name:"Gupta"
     }
 ]
