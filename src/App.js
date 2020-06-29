@@ -8,27 +8,29 @@ class App extends Component {
     super();
     this.state = {
       robots: robots,
-      searchfield: "",
-    };
+      searchfield: ''
+    }
   }
 
   onSearchChange = (event) => {
-    console.log(event.target.value);
-    const filteredRobots = this.state.robots.filter((robots) => {
-      return robots.first_name.toLowerCase().includes(this.state.searchfield.toLowerCase);
-    });
-  }
+    this.setState({ searchfield: event.target.value });
+    //to change/update state
+    //done in place of this.state.searchfield
+  };
   //   about error:
   //   the value of this is now refering to the app because the event happened in the input
   //   the value of this is well the input and input does not have states.robot.
   //   to overcome error use arrow functions.
   render() {
+    const filteredRobots = this.state.robots.filter(robots => { 
+      return (robots.name.toLowerCase().includes(this.state.searchfield.toLowerCase()));
+    });
     return (
       <div className="tc">
         <h1>Robo Friends</h1>
         <SearchBox searchChange={this.onSearchChange} />
         {/* <CardList robots={robots} /> */}
-        <CardList robots={this.state.robots} />
+        <CardList robots={filteredRobots} />
       </div>
     );
   }

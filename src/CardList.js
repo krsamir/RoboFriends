@@ -6,8 +6,9 @@ const CardList = ({ robots }) => {
       <Card
         key={i}
         id={robots[i].id}
-        first_name={robots[i].first_name}
-        last_name={robots[i].last_name}
+        name={robots[i].name}
+        username={robots[i].username}
+        email={robots[i].email}
       />
     );
   });
