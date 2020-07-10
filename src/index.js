@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import * as serviceWorker from "./serviceWorker";
-import App from "./App";
+import App from "./containers/App";
  //since import is not default we have to destruct it
 
 ReactDOM.render(
